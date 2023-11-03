@@ -74,9 +74,31 @@ and navigate to the created folder.
 The docker container for the OpenTOSCA Container (called `container-1`) and for the IACMF Backend (called `iacmf-backend-1`) are the longest to finish booting up.
 The following screenshots shows their logs when the boot is finished: ![](./assets/screenshots/OpenTOSCA%20Container%20finished%20startup.png)
 ![](./assets/screenshots/IACMF%20Backend%20finished%20startup.png)
-7. Deploy a sample TOSCA application on OpenTOSCA Contaner (see below for details).
-8. Provision an instance of the cloud application (see below for more details).
+7. Deploy a sample TOSCA application on OpenTOSCA Contaner ([see below for details](#step-7---deploy-a-sample-tosca-application-on-opentosca-container)).
+8. Provision an instance of the cloud application ([see below for more details](#step-8---provision-an-instance-of-the-cloud-application)).
 9. Setup a new compliance job in IACMF and try it(see below for more details).
 10. Introduce a compliance violation in the cloud application instnace (see below for more details).
 11. Run an execution of the complaince job to detect and automatically fix the violation (see below for more details).
+
+Steps 9-11 represent the actual experiments. 
+Steps 1-8 represent the setup phase.
+
+### Step 7 - Deploy a Sample TOSCA Application on OpenTOSCA Container
+
+1. Obtain the archive file that will be used to deploy the cloud application from the Zenodo repository hosting a copy of this case study (the file is also available in a release within this Github repository).
+The file is called: `RealWorld-Application_Angular-Spring-MySQL-w2-wip1.csar`, and it is around 150 MB.
+2. Open the browser to http://localhost:8088 view the management UI of OpenTOSCA Container.
+3. Click on the `Upload new Application` button.
+![](./assets/screenshots/OTContainer%20Upload%20CSAR.png)
+4. In the shown dialog, select the obtained `RealWorld-Application_Angular-Spring-MySQL-w2-wip1.csar` file.
+![](./assets/screenshots/OTContainer%20CSAR%20selected.png)
+5. Click on `Upload` (the upload may take around 1 minute).
+![](./assets/screenshots/OTContainer%20CSAR%20Uploaded.png)
+
+[[go to overview]](#overall-steps)
+
+### Step 8 - Provision an Instance of the Cloud Application
+
+
+
 
