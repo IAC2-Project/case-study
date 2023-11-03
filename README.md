@@ -91,12 +91,12 @@ The following screenshots show their logs when booting is finished: ![](./assets
 10. Introduce a compliance violation in the cloud application instance ([see below for more details](#step-10---introduce-a-compliance-violation-in-the-cloud-application-instnace)).
 11. Run an execution of the compliance job to detect and automatically fix the violation ([see below for more details](#step-11---run-an-execution-of-the-complaince-job-to-detect-and-automatically-fix-the-violation)).
 
-Steps 9-11 represent the actual experiments. 
+Steps 9-11 represent the actual experiments.
 Steps 1-8 represent the setup phase.
 
 ### Step 7 - Deploy a Sample TOSCA Application on OpenTOSCA Container
 
-1. Obtain the archive file that will be used to deploy the cloud application from the Zenodo repository hosting a copy of this case study (the file is also available in a release within this Github repository).
+1. Obtain the archive file that will be used to deploy the cloud application from the [Zenodo repository](https://doi.org/10.5281/zenodo.10069931) hosting a copy of this case study (the file is also available in a [release within this Github repository](https://github.com/IAC2-Project/case-study/releases/tag/v1.0.0)).
 The file is called: `RealWorld-Application_Angular-Spring-MySQL-w2-wip1.csar`, and it is around 150 MB.
 2. Open the browser to http://localhost:8088 to view the management UI of OpenTOSCA Container.
 3. Click on the `Upload new Application` button.
