@@ -219,3 +219,7 @@ After around a minute the execution will be finished with the State "Finished No
 5. You can click on the detected violation to see more details about the violation and how it was fixed.
 6. (Optional) visualize the new instance model in Winery by clicking on the link _Click here to visualize_, and notice the new, unexpected Docker container.
 ![](./assets/screenshots/Experiment/Winery%20Instance%20Model%20Violations.png)
+7. (Optional) execute the compliance job one more time, and notice that the cloud application is compliant again.
+![](./assets/screenshots/Experiment/IACMF%20CJ%20finished%20-%20no%20violation%202.png)
+
+[[go to overview]](#overall-steps)
