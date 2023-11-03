@@ -11,6 +11,30 @@ This and other case studies are also demonstrated in [this video](https://clipch
 - Docker Desktop (v4.19.0)
 - `git`
 - Sufficient disk space (the needed docker images are around 7 GB)
+- At the beginning of the experiment, no docker containers can be running on the local docker engine.
+- The following ports must be free:
+    - 80
+    - 1337
+    - 1883
+    - 3306
+    - 4200
+    - 4406
+    - 7070
+    - 8080
+    - 8081
+    - 8082
+    - 8083
+    - 8085
+    - 8086
+    - 8087
+    - 8088
+    - 8092
+    - 8099
+    - 8098
+    - 9763
+    - 9091
+    - 13373
+
 
 ## The Overall Experiment Design
 
@@ -39,4 +63,20 @@ In the following, the high-level steps of the experiment are presented.
 Certain steps have more details, which are presented in separate sections below.
 
 1. Clone this repository to a local folder
-```git clone ```
+```git clone https://github.com/IAC2-Project/case-study.git```
+and navigate to the created folder.
+2. Find the public IP address of your machine (e.g., using `ipconfig \all`) and copy it to the variable called `PUBLIC_HOSTNAME` inside the file `.env` (this is necessary to allow docker containers to correctly communicate with each other).
+3. Pull the latest version of the necessary docker images by opening the command line inside the cloned folder and running:
+``` docker-compose pull```.
+4. Build the remaining docker images (that represent the frontend and the backend) by running the following command: ```docker-compose build --no-cache``` (may take up to 10 minutes).
+5. Start the docker containers by running the following command: `docker-compose up -d`.
+6. Wait for around 2 minutes for the containers and the hosted application to finish starting.
+The docker container for the OpenTOSCA Container (called `container-1`) and for the IACMF Backend (called `iacmf-backend-1`) are the longest to finish booting up.
+The following screenshots shows their logs when the boot is finished: ![](./assets/screenshots/OpenTOSCA%20Container%20finished%20startup.png)
+![](./assets/screenshots/IACMF%20Backend%20finished%20startup.png)
+7. Deploy a sample TOSCA application on OpenTOSCA Contaner (see below for details).
+8. Provision an instance of the cloud application (see below for more details).
+9. Setup a new compliance job in IACMF and try it(see below for more details).
+10. Introduce a compliance violation in the cloud application instnace (see below for more details).
+11. Run an execution of the complaince job to detect and automatically fix the violation (see below for more details).
+
