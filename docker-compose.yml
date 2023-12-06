@@ -8,12 +8,13 @@ services:
     ports:
       - '9091:9091'
     environment:
-      - MYSQL_HOST=${PUBLIC_HOSTNAME}
+      MYSQL_HOST: ${PUBLIC_HOSTNAME}
+    restart: always
   iacmf-frontend:
     build: 
       context: ./frontend-docker
       args:
-        - BACKEND_URL=${PUBLIC_HOSTNAME}
+        BACKEND_URL: ${PUBLIC_HOSTNAME}
     depends_on:
       - iacmf-backend
     ports:
@@ -92,6 +93,16 @@ services:
       CONTAINER_DEPLOYMENT_TESTS: 'false'
     volumes:
       - container_vol:/tmp/opentosca
+  dind:
+    image: docker:24
+    privileged: true
+    environment:
+      # Disables TLS and starts on port 2375 instead of 2376
+      - DOCKER_TLS_CERTDIR=
+    ports: 
+      - '2222:2375'
+      - '80:80'
+      - '13373:13373'
   ui:
     image: opentosca/ui:latest
     environment:
