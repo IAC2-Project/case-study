@@ -117,9 +117,8 @@ Steps 1-8 represent the setup phase.
    (the file is also available in a [release within this Github repository](https://github.com/IAC2-Project/case-study/releases/tag/v1.0.0)).
    The file is called: `RealWorld-Application_Angular-Spring-MySQL-w2-wip1.csar`, and it is around 150 MB.
 
-2. Open the browser on `http://<YOUR_IP_ADDRESS>:8088` to view the management UI of OpenTOSCA Container.
+2. Open the browser on `http://localhost:8088` to view the management UI of OpenTOSCA Container.
 
-    :warning: If you use `http://localhost:8088` instead of your IP address, you will run into issues during upload and deployment!
 
 3. Click on the `Upload new Application` button.
    ![](./assets/screenshots/OTContainer%20Upload%20CSAR.png)
@@ -289,12 +288,12 @@ This finishes the process of setting up a compliance job and testing it.
 
 In this step, we will introduce a new Docker container running on the same Docker engine as the cloud application, which constitutes a compliance rule violation.
 
-1. Open a command prompt.
+1. Open a __git bash__ command prompt.
 
 2. Run the following commands:
    ```
-   docker pull bash
-   docker run -it bash
+   docker exec iac2-dind-1 docker pull bash
+   winpty docker exec -it iac2-dind-1 docker run -it bash
    ```
 
 3. __Do not close the command prompt window!__
