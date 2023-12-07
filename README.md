@@ -119,14 +119,16 @@ Steps 1-8 represent the setup phase.
 
 2. Open the browser on __`http://<YOUR_IP_ADDRESS>:8088`__ to view the management UI of OpenTOSCA Container.
 
+3. Click on the __Administration__ tab, and make sure that the property `API ENDPOINT` has the value: `http://<YOUR_IP_ADDRESS>:1337`
+ ![](./assets/screenshots/OTContainer%20Admin.png)
 
-3. Click on the `Upload new Application` button.
+4. Go back to the __Applications__ tab and click on the `Upload new Application` button.
    ![](./assets/screenshots/OTContainer%20Upload%20CSAR.png)
 
-4. In the shown dialog, select the obtained `RealWorld-Application_Angular-Spring-MySQL-w2-wip1.csar` file.
+5. In the shown dialog, select the obtained `RealWorld-Application_Angular-Spring-MySQL-w2-wip1.csar` file.
    ![](./assets/screenshots/OTContainer%20CSAR%20selected.png)
 
-5. Click on `Upload` (the upload may take around 1 minute).
+6. Click on `Upload` (the upload may take around 1 minute).
    ![](./assets/screenshots/OTContainer%20CSAR%20Uploaded.png)
 
 [[go to overview]](#overall-steps)
