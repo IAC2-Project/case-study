@@ -117,7 +117,7 @@ Steps 1-8 represent the setup phase.
    (the file is also available in a [release within this Github repository](https://github.com/IAC2-Project/case-study/releases/tag/v1.0.0)).
    The file is called: `RealWorld-Application_Angular-Spring-MySQL-w2-wip1.csar`, and it is around 150 MB.
 
-2. Open the browser on `http://localhost:8088` to view the management UI of OpenTOSCA Container.
+2. Open the browser on __`http://<YOUR_IP_ADDRESS>:8088`__ to view the management UI of OpenTOSCA Container.
 
 
 3. Click on the `Upload new Application` button.
