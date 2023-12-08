@@ -8,8 +8,9 @@ This and other case studies are also demonstrated in [this video](https://clipch
 ## Prerequisites
 
 - Windows 11 (Only tested on this version. Other OS types and versions might also be fine.)
+- Google Chrome or Microsoft Edge browsers (only tested on these browsers.)
 - Docker Desktop (tested on v4.19.0)
-- Internet access.
+- __Stable__ Internet access.
 - `git`
 - Sufficient disk space (the needed docker images are around 7 GB)
 - __At the beginning of the experiment, no docker containers are allowed to be running on the local docker engine.__
@@ -17,13 +18,13 @@ This and other case studies are also demonstrated in [this video](https://clipch
     - 80
     - 1337
     - 1883
-    - 3306
+    - 2222
     - 4200
     - 4406
     - 7070
     - 8080 - 8088
     - 8092
-    - 8099 - 8098
+    - 8098 - 8099
     - 9091
     - 9763
     - 13373
@@ -64,9 +65,10 @@ Certain steps have more details, which are presented in separate sections below.
     ```
    And navigate to the created folder.
 
-2. Find the public IP address of your machine (e.g., using `ipconfig /all`) and copy it to the variable called
-   `PUBLIC_HOSTNAME` inside the file `.env`, and save the file (this is necessary to allow docker containers
-   to correctly communicate with each other).
+2. Find the public IPV4 address of your machine (e.g.,  use __cmd__ or __PowerShell__ and run the `ipconfig /all` command). For example, if you are connected to the internet using WiFi, the corresponding entry would be called _"Wireless-Lan-Adapter WLAN"_ or similar to that.
+Copy the IPV4 value to the variable called
+   `PUBLIC_HOSTNAME` inside the file `.env`, and save the file (_this is necessary to allow docker containers
+   to correctly communicate with each other_).
 
 3. Pull the latest version of the necessary docker images by opening the command line inside the cloned folder and running:
     ```
@@ -85,12 +87,11 @@ Certain steps have more details, which are presented in separate sections below.
 
 6. Wait for around 2 minutes for the containers and the hosted application to finish starting.
    The docker container for the OpenTOSCA Container (called `container-1`) and for the IACMF Backend (called `iacmf-backend-1`) are the longest to finish booting up.
-   The following screenshots show their logs when booting is finished:
+   __Note that errors related to not being able to run certain `DDL` SQL commands can be ignored.__
    
-   __Hint:__ You can also run the contains without detached mode, so you can see the logs in the terminal, i.e.,
-   ```
-   docker compose up
-   ```
+   The following screenshots from the Docker Desktop application show the corresponding logs when booting is finished:
+   
+   __Hint:__ You can also run the contains without detached mode, so you can see the logs in the terminal, i.e., `docker compose up`
    
    ![](./assets/screenshots/OpenTOSCA%20Container%20finished%20startup.png)
    ![](./assets/screenshots/IACMF%20Backend%20finished%20startup.png)
