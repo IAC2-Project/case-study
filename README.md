@@ -7,7 +7,7 @@ This and other case studies are also demonstrated in [this video](https://clipch
 
 ## Prerequisites
 
-- Windows 11 (Only tested on this version. Other OS types and versions might also be fine.)
+- Windows 11 or Ubuntu 20.04 LTS (Only tested on these version. Other OS types and versions might also be fine.)
 - Google Chrome or Microsoft Edge browsers (only tested on these browsers.)
 - Docker Desktop (tested on v4.19.0)
 - __Stable__ Internet access.
@@ -65,7 +65,7 @@ Certain steps have more details, which are presented in separate sections below.
     ```
    And navigate to the created folder.
 
-2. Find the public IPV4 address of your machine (e.g.,  use __cmd__ or __PowerShell__ and run the `ipconfig /all` command). For example, if you are connected to the internet using WiFi, the corresponding entry would be called _"Wireless-Lan-Adapter WLAN"_ or similar to that.
+2. Find the public IPV4 address of your machine (e.g.,  use __cmd__ or __PowerShell__ for Windows and run the `ipconfig /all` command). For example, if you are connected to the internet using WiFi, the corresponding entry would be called _"Wireless-Lan-Adapter WLAN"_ or similar to that.
 Copy the IPV4 value to the variable called
    `PUBLIC_HOSTNAME` inside the file `.env`, and save the file (_this is necessary to allow docker containers
    to correctly communicate with each other_).
@@ -96,15 +96,17 @@ Copy the IPV4 value to the variable called
    ![](./assets/screenshots/OpenTOSCA%20Container%20finished%20startup.png)
    ![](./assets/screenshots/IACMF%20Backend%20finished%20startup.png)
 
-7. Deploy a sample TOSCA application on OpenTOSCA Container ([see below for details](#step-7---deploy-a-sample-tosca-application-on-opentosca-container)).
+   __Troubleshooting__: If you are using a Linux distribution and one or more containers fail to start, check their logs. If the message `unable to allocate file descriptor table - out of memory` is included, please override Docker's configuration to increase `ulimit`, e.g., by editing the file `/etc/systemd/system/docker.service` such that the entry `ExecStart` looks as follows: `ExecStart=/usr/bin/dockerd --default-ulimit nofile=65536:65536 -H fd://`. For further information on how to properly apply Docker configuration overrides, please refer to https://askubuntu.com/a/659268/299606 .
 
-8. Provision an instance of the cloud application ([see below for more details](#step-8---provision-an-instance-of-the-cloud-application)).
+8. Deploy a sample TOSCA application on OpenTOSCA Container ([see below for details](#step-7---deploy-a-sample-tosca-application-on-opentosca-container)).
 
-9. Set up a new compliance job in IACMF and try it ([see below for more details](#step-9---setup-a-new-compliance-job-in-iacmf-and-try-it)).
+9. Provision an instance of the cloud application ([see below for more details](#step-8---provision-an-instance-of-the-cloud-application)).
 
-10. Introduce a compliance violation in the cloud application instance ([see below for more details](#step-10---introduce-a-compliance-violation-in-the-cloud-application-instnace)).
+10. Set up a new compliance job in IACMF and try it ([see below for more details](#step-9---setup-a-new-compliance-job-in-iacmf-and-try-it)).
 
-11. Run an execution of the compliance job to detect and automatically fix the violation ([see below for more details](#step-11---run-an-execution-of-the-complaince-job-to-detect-and-automatically-fix-the-violation)).
+11. Introduce a compliance violation in the cloud application instance ([see below for more details](#step-10---introduce-a-compliance-violation-in-the-cloud-application-instnace)).
+
+12. Run an execution of the compliance job to detect and automatically fix the violation ([see below for more details](#step-11---run-an-execution-of-the-complaince-job-to-detect-and-automatically-fix-the-violation)).
 
 Steps 9-11 represent the actual experiments.
 Steps 1-8 represent the setup phase.
