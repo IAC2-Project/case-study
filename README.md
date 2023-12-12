@@ -4,6 +4,8 @@ This repo allows setting up and running a case study that demonstrates the usage
 In summary, the rule demands that no unexpected docker containers are allowed to run within the cloud deployment.
 
 This and other case studies are also demonstrated in [this video](https://clipchamp.com/watch/Geqe70aPkjh).
+This case study is also available on Zenodo: https://doi.org/10.5281/zenodo.10364210
+
 
 ## Prerequisites
 
@@ -116,7 +118,7 @@ Steps 1-8 represent the setup phase.
 ### Step 7 - Deploy a Sample TOSCA Application on OpenTOSCA Container
 
 1. Obtain the archive file that will be used to deploy the cloud application from the
-   [Zenodo repository](https://doi.org/10.5281/zenodo.10069931) hosting a copy of this case study
+   [Zenodo repository](https://doi.org/10.5281/zenodo.10364210) hosting a copy of this case study
    (the file is also available in a [release within this Github repository](https://github.com/IAC2-Project/case-study/releases/tag/v1.0.0)).
    The file is called: `RealWorld-Application_Angular-Spring-MySQL-w2-wip1.csar`, and it is around 150 MB.
 
